@@ -8,7 +8,19 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+var uriUtil = require('mongodb-uri')
+require('./models/Posts');
+require('./models/Comments');
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000}},
+ replset: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}};
+
+var mongodbUri = 'mongodb://braelan:booker11@ds045694.mongolab.com:45694/learn';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 var app = express();
+
+
+mongoose.connect(mongooseUri, options);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
