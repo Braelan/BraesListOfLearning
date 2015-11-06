@@ -1,8 +1,22 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body, div, span, object, h1,
+h2, h3, h4, p, a, em, img, small,
+ul, li, section {
+  margin: 0;
+  border:0;
+  font-size: 25px;
+  font: inherit;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Source Code Pro" ;
+  background: black;
+  color: #8a70DD;
 }
-
+body {
+  padding: 50px
+}
 a {
   color: #00B7FF;
+}
+em {
+  cursor:pointer;
 }
